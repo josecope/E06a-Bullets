@@ -1,25 +1,14 @@
 # E06a-Bullets
-Playing with bullet sprites:
+Hello!
 
-It's narwhals vs. penguins(?)! These natural enemies are locked in a battle; who will survive?
+In this exercise, the assignment was to design a shooter game in which a narwhal (the player) has to shoot and kill all the penguins.  To make this possible, I had to write code so that the player could shoot bullets with a left-mouse click, the penguins would take damage and eventually die, and the player's score would increase.
 
-I have given you the beginnings of a shooter game. At a minimum, you will need to generate a bullet when the mouse button is clicked (line 95), and then detect a collsion with a penguin (line 76), decrease its health, check if it dies, and increase the player's score.
+First, to generate the bullets coming from the player, I used the code given to us.  This code applied damage to the bullets and spawned them/allowed them to shoot towards the penguins.
 
-For extra credit, end the game when all the penguins have been killed.
+Next, I wrote a program that allowed the bullets to collide with the penguins.  To do this, I allowed the game to constantly update and check for collisions between the bullet sprites and the penguin sprites.  Also, I deleted the pass function that made the bullets simply pass through the penguins.
 
-I will award significant extra credit if you subsequently create a main2.py, using the same framework, that allows the penguins to fire back. I have included a bullet_enemy.png asset for that purpose. Even more points will be awarded if you include explosions and/or damage indicators.
+After this, I made the penguins take damage and eventually die, which in turn increased the players score.  For every bullet that hit a penguin, the player recieved points, and for every time he or she killed a penguin, the score went up.  In order to accomplish this, I set the collision function equal to damage.  Then, I made the code so that when a penguin's hitpoints hit 0, the sprite was killed.
 
-To get you started, this is how I generated a new bullet:
+I attempted to do the extra credit but could not figure either of the tasks out.  I guessed that the game end had something to do with the number of enemies left or the player's score but did not know what to do with that information.
 
-```
-    x = self.player.center_x
-    y = self.player.center_y + 15
-    bullet = Bullet((x,y),(0,10),BULLET_DAMAGE)
-    self.bullet_list.append(bullet)
-```
-
-The arcade.check_for_collision_with_list(sprite, spriteList) method takes a sprite and a spriteList and returns a list of any elements from spriteList that are currently colliding with sprite.
-
-self.player.kill() will remove the player sprite. .kill() can be (similarly) used to remove any sprite.
-
-As always, let me know if you have any questions.
+Thanks for checking it out!
